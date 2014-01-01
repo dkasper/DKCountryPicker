@@ -159,17 +159,20 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    SEL descriptionMethod = @selector(description);
-    if(self.showPhoneCodes) {
-        descriptionMethod = @selector(descriptionWithPhoneCode);
-    }
+    __Country *country;
     
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        cell.textLabel.text = [searchData[indexPath.row] performSelector:descriptionMethod];
+        country = (__Country *)searchData[indexPath.row];
     } else {
         NSString *key = sortedKeys[indexPath.section];
-        cell.textLabel.text = [countryDictionary[key][indexPath.row] performSelector:descriptionMethod];
+        country = (__Country *)countryDictionary[key][indexPath.row];
+    }
+    
+    if(self.showPhoneCodes) {
+        cell.textLabel.text = [country descriptionWithPhoneCode];
+    } else {
+        cell.textLabel.text = [country description];
     }
     
     return cell;
