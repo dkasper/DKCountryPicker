@@ -1,0 +1,10 @@
+PODS:
+  - libPhoneNumber-iOS (0.5.7.3)
+
+DEPENDENCIES:
+  - libPhoneNumber-iOS
+
+SPEC CHECKSUMS:
+  libPhoneNumber-iOS: 247491020e32a648b5cf8b284f5fcf3df15af61e
+
+COCOAPODS: 0.28.0
