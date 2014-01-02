@@ -10,6 +10,10 @@
 
 @protocol DKCountryPickerDelegate <NSObject>
 
+/* userInfo will have keys: phoneCode   ~ @"1"
+ *                          countryCode ~ @"US"
+ *                          country     ~ @"United States"
+ */
 -(void)countryPickerValueSelected:(NSDictionary *)userInfo;
 
 @end
