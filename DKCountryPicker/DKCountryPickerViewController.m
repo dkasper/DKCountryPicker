@@ -187,7 +187,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     __Country *country;
-    if(self.tableView == self.searchDisplayController.searchResultsTableView) {
+    if(tableView == self.searchDisplayController.searchResultsTableView) {
         country = searchData[indexPath.row];
     } else {
         NSString *key = sortedKeys[indexPath.section];
