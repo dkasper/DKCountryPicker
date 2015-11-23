@@ -68,7 +68,7 @@
         __Country *newCountry = [[__Country alloc] init];
         newCountry.countryCode = countryCode;
         newCountry.name = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-        newCountry.phoneCode = [util countryCodeFromRegionCode:countryCode];
+        newCountry.phoneCode = [util getCountryCodeForRegion:countryCode];
         
         //code can be null
         if(!newCountry.phoneCode) {
